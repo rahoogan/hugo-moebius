@@ -1,0 +1,13 @@
+{{ partial "top.html" . }}
+<div class="content article-content">
+<h1>{{ .Title }}</h1>
+
+<hr>
+<h2>Table of Contents</h2>
+{{ .TableOfContents }}
+<article>
+    {{ .Content }}
+</article>
+</div>
+
+{{ partial "bottom.html" . }}

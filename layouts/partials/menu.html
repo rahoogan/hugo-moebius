@@ -1,0 +1,65 @@
+<nav class="navbar flex">
+    <div class="flex">
+        <a href="{{ index .Site.Params "rootlink" | default .Site.BaseURL }}" class="banner-logo">
+            <img class="logo" src="{{ .Site.Params.BaseURL }}{{ .Site.Params.logo  }}">
+            <div class="stack brand">
+                <h1 class="brand-title">{{ .Site.Params.brandTitle }}</h1>
+                <h4 class="brand-subtitle">{{ .Site.Params.brandSubtitle }}</h4>
+            </div>
+        </a>
+        <a class="nav-link" href="#">
+            About
+        </a>
+        <a class="nav-link" href="{{ .Site.Params.posts }}">
+            Posts
+        </a>
+        <a class="nav-link" href="#">
+            Projects
+        </a>
+    </div>
+    <div class="nav-icons flex">
+        <a id="hamburger" href="#">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+        {{ range .Site.Params.social }}
+        <a href="{{ .url }}" class="social-icon">
+            <i class="{{ .icon }}"></i>
+        </a>
+        {{ end }}
+        <a id="makeover" href="#">
+            <i class="fas fa-redo-alt fa-2x"></i>
+        </a>
+    </div>
+</nav>
+<div class="navbar flex">
+    <ul class="navbar-dropdown flex">
+        <li>
+            <a href="#">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="{{ .Site.Params.posts }}">
+                Posts
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Projects
+            </a>
+        </li>
+        {{ range .Site.Params.social }}
+        <li>
+            <a href="{{ .url }}" class="social-icon">
+                <i class="{{ .icon }}"></i>
+            </a>
+        </li>
+        {{ end }}
+        <li>
+            <a id="makeover" href="#">
+                <i class="fas fa-redo-alt"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr class="banner-divider">

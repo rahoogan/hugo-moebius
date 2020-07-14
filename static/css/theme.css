@@ -1,0 +1,335 @@
+html {
+    /* This ensures padding and margins are included in element sizes */
+    box-sizing: border-box;
+}
+
+/* This ensures padding and margins are included in element sizes */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/***********************/
+/* Mobile First Design */
+/* Declare styles for 
+mobile devices first */
+/***********************/
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.stack {
+    display: block
+}
+
+
+/* Global Styles and Fonts */
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: #516ffe;
+}
+
+.bg-color {
+    background-color: #516ffe;
+}
+
+/*****************/
+/* Navbar Styles */
+/*****************/
+.navbar {
+    margin: 0.5rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+    .navbar {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.navbar h1 {
+    font-size: 1.6rem
+}
+
+/* Disable default hyperlink styles */
+.navbar a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a.nav-link {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    a.nav-link {
+        display: flex;
+        padding: 1rem;
+	font-size: 1.3rem;
+    }
+}
+
+nav a {
+    display: flex;
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: bold;
+}
+
+nav a.active {
+    background-color: #516ffe;
+    padding: 0.4rem;
+    color: white;
+    border-color: black;
+    border-width: thick;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 5px 2px 8px #888888;
+    font-weight: bold;
+}
+
+.nav-icons a {
+    font-weight: normal;
+}
+
+.nav-icons a.social-icon {
+    display: none;
+}
+
+/* Display social icons in main navbar for larger screens */
+@media screen and (min-width: 800px) {
+    .nav-icons a.social-icon {
+        display: inherit;
+	padding: 1rem;
+	font-size: 2rem;
+    }
+}
+
+.logo {
+    width: 70px;
+}
+
+.brand {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.brand-title {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 800px) {
+    /* Larger title font size for desktops */
+    .navbar h1 {
+        font-size: 2rem;
+    }
+}
+
+.brand-subtitle {
+    margin-top: 0;
+}
+
+.banner-logo {
+    align-items: center;
+}
+
+/* Navbar Dropdown */
+div.navbar {
+    justify-content: space-evenly;
+}
+
+.navbar-dropdown {
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-dropdown.active {
+    max-height: 100px;
+    transition: max-height 0.25s ease-in;
+}
+
+.navbar-dropdown li {
+    padding: 0.2rem;
+    margin: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Hide hamburger menu and dropdown for larger screens */
+@media screen and (min-width: 800px) {
+    #hamburger {
+        display: none;
+    }
+
+}
+
+#makeover {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    #makeover {
+        display: inherit;
+	padding: 1rem;
+    }
+}
+
+/***********************/
+
+.date {
+    font-weight: bold;
+}
+
+.entry-title {
+    margin-bottom: 1rem;
+}
+
+.entry-date {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+hr.banner-divider {
+    margin-left: 1%;
+    margin-right: 1%;
+    height: .2rem;
+    color: #a79c9c;
+    border-radius: 25px;
+    border-color: transparent;
+    opacity: 60%;
+}
+
+.content {
+    margin-bottom: 2rem;
+    /* Ensure content is fixed width */
+    max-width: 850px;
+    /* Align content to conter */
+    margin-left: auto;
+    margin-right: auto;
+    /* Line Height Using golden ratio */
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+.content p {
+    font-size: 1.1rem;
+}
+
+.content h1 {
+    font-size: 1.5rem;
+}
+
+.content h2,
+.content h3,
+.content h4 {
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 800px) {
+    .content {
+        margin-top: 2rem;
+	    font-size: 1.1rem;
+    }
+
+    .content h1 {
+	font-size: 2rem;
+    }
+    .content h2,
+    .content h3,
+    .content h4 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Ensure link text in content wraps around */
+div.content a {
+    white-space: pre-wrap;
+    word-break: break-all;
+    white-space: normal;
+    display:block;
+}
+
+/* Ensure images fit to screen */
+div.content img {
+    max-width: 100%;
+}
+
+/* Prevent titles in cards showing default hyperlinks */
+h3.entry-title a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.card {
+    box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+    padding: 2rem;
+}
+
+/* Add padding for full-length article content (on mobile) */
+.article-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+    .article-content {
+	padding-left: 0px;
+	padding-right: 0px;
+    }
+}
+
+/* floating icon button to scroll up to the top */
+.scroll-up {
+    border-width: thick;
+    border: 5px solid #516ffe;
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    opacity: 60%;
+    position: fixed;
+    z-index: 2;
+    bottom: 50px;
+    right: 50px;
+    color: inherit;
+}
+
+.scroll-up i {
+    border: 10px;
+    border-width: thick;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+/* Syntax Highlighting */
+.hljs {
+    border-radius: 10px;
+    box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+    background: #181914;
+}

@@ -1,0 +1,64 @@
+<base href="/">
+<meta charset="utf-8">
+<!-- Define width of viewport to ensure there is no horizontal scroll -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
+<meta name="description" content="{{ .Params.summary }}">
+<title>{{ .Title }}</title>
+{{ .Hugo.Generator }}
+<!-- syntax highlighting-->
+{{ partial "highlightjs.html" }}
+<!-- Adds Browser Normalisation CSS to ensure consistency between browsers -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet" type="text/css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/theme.css">
+<link rel="icon" type="image/icon" href="{{ .Site.BaseURL }}{{ .Site.Params.logo }}"/>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsID }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+  
+          gtag('config', '{{ .Site.Params.googleAnalyticsID }}');
+</script>
+<!-- JSON-LD Rich Content Description - for SEO/Google Results -->
+<script type="application/ld+json">
+    { "@context": "http://schema.org",
+     "@type": "BlogPosting",
+     "headline": "{{ .Title }}",
+     "alternativeHeadline": " {{ .Title }}",
+     "mainEntityOfPage": "{{ index .Site.Params "rootlink" | default .Site.BaseURL }}",
+     "image": {
+         "@type": "imageObject",
+         "url": "{{ .Site.BaseURL }}/{{ .Site.Params.logo  }}",
+         "width": "200"
+     },
+     "editor": "{{ with .Site.Params.author }}{{ . }}{{ end }}",
+     "genre": "{{ .Params.tags }}",
+     "keywords": "{{ .Params.tags }}",
+     "wordCount": "{{ .Params.WordCount }}",
+     "publisher": {
+         "@type": "Organization",
+         "name": "{{ .Site.Params.brandName }}",
+         "logo": {
+             "@type": "imageObject",
+             "url": "{{ .Site.BaseURL }}/{{ .Site.Params.logo  }}"
+         }
+     },
+     "url": "{{ index .Site.Params "rootlink" | default .Site.BaseURL }}/{{ .Params.URL }}",
+     "datePublished": "{{ .Date.Format "2006-01-02 15:04:05" }}",
+     "dateCreated": "{{ .Date.Format "2006-01-02 15:04:05" }}",
+     "description": "{{ .Params.summary }}",
+     "articleBody": "{{ .Params.summary }}",
+     "author": {
+         "@type": "Person",
+         "name": "{{ .Site.Params.author }}"
+     }
+    }
+</script>
+<!-- Netlify CMS-->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
