@@ -245,13 +245,13 @@ hr.banner-divider {
     /* Line Height Using golden ratio */
     line-height: 1.6;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     /* For giving space for sticky navbar */
-    margin-top: 120px;
+    margin-top: 130px;
 }
 
 .content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .content h1 {
@@ -266,8 +266,9 @@ hr.banner-divider {
 
 @media screen and (min-width: 800px) {
     .content {
-        margin-top: 2rem;
-	    font-size: 1.1rem;
+        font-size: 1.2rem;
+        /* For Sticky Sidebar */
+        display: flex;
     }
 
     .content h1 {
@@ -283,9 +284,8 @@ hr.banner-divider {
 /* Ensure link text in content wraps around */
 div.content a {
     white-space: pre-wrap;
-    word-break: break-all;
+    word-break: break-word;
     white-space: normal;
-    display:block;
 }
 
 /* Ensure images fit to screen */
@@ -306,15 +306,11 @@ h3.entry-title a {
 
 /* Add padding for full-length article content (on mobile) */
 .article-content {
+    display: block;
     padding-left: 2rem;
     padding-right: 2rem;
-}
-
-@media screen and (min-width: 800px) {
-    .article-content {
-	padding-left: 0px;
-	padding-right: 0px;
-    }
+    padding-top: 0.1rem;
+    /* font-size: 1.2rem; */
 }
 
 /* floating icon button to scroll up to the top */
@@ -347,4 +343,97 @@ h3.entry-title a {
     border-radius: 10px;
     box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
     background: #181914;
+}
+
+/******************/
+/* Sidebar Styles */
+/******************/
+
+.sidebar {
+    display: none;
+}
+
+.sidebar-sticky {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    .sidebar {
+        position: sticky;
+        top: 130px;
+        display: block;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .sidebar-sticky {
+        display: block;
+        width: 200%;
+    }
+
+    .sidebar-sticky ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin-left: 0px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        position: sticky;
+        top: 199px;
+    }
+
+    /* Search box */
+    .search {
+        padding: 1rem;
+        box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+        border: none;
+    }
+
+    .search:focus {
+        outline-color: #96a8fe;
+    }
+
+    /* Keep tag styles consistent with active style */
+    .tag {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        color: #516ffe;
+        border-color: black;
+        border-width: thick;
+        border: 1px solid;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 0.4rem;
+    }
+
+    li.tag a {
+        color: inherit;
+        text-decoration: inherit;;
+    }
+
+    /* Style for a selected tag */
+    .tag.active {
+        color: white;
+        border-color: white;
+        background-color: #516ffe;
+    }
+}
+
+/* Ensure loaded fragment url's for headings leave space for sticky navbar */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    margin-top: -120px;
+    padding-top: 140px;
+}
+
+
+/* Clean up Hugo Generated Table of Contents */
+/* Don't display empty h1 level if it doesn't exist (i.e an empty bullet point) */
+#TableOfContents>ul {
+    padding: 0;
+}
+#TableOfContents>ul>li{
+    list-style: none;
 }
