@@ -438,3 +438,36 @@ h3.entry-title a {
 #TableOfContents>ul>li{
     list-style: none;
 }
+
+/* Pagination Style */
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 0px;
+}
+
+.pagination li {
+    border-width: thick;
+    border: 5px solid #516ffe;
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    opacity: 60%;
+    z-index: 2;
+    bottom: 50px;
+    right: 50px;
+    color: inherit;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li a {
+    font-weight: bolder;
+    font-size: 2rem;
+    color: inherit;
+    text-decoration: inherit;
+}
