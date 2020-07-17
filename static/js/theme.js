@@ -28,3 +28,26 @@ hamburger.addEventListener("click", function(e) {
     hamburger.classList.toggle("active")
     dropdown.classList.toggle("active")
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname.startsWith('/tags/')) {
+        // Clear all existing tags
+        document.querySelectorAll('.tag').forEach(function(i) {
+            if (i.classList.contains('active')) {
+                i.classList.remove('active');
+            }
+        })
+        window.location.pathname
+            .split('/')
+            .filter(word => word.length > 0 && word !== "tags")
+            .forEach(function(t) {
+                // Set current active tag
+                document.querySelector('.tag-'+t).classList.toggle('active');
+            });
+    }
+    else {
+        document.querySelectorAll('.tag.active').forEach(function(i) {
+            i.classList.remove('active');
+        })
+    }
+})

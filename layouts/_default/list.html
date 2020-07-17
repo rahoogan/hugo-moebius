@@ -9,6 +9,20 @@
         <p>{{ .Summary }}</p>
     </article>
     {{ end }}
+    </div>
+    <div class="sidebar-sticky">
+    <aside class="sidebar">
+	<input class="search" placeholder="Search..."/>
+    </aside>
+    <ul>
+    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+        <li class="tag tag-{{ $name }}">
+            <a href="{{ $.Site.BaseURL }}/tags/{{ $name }}">
+                {{ $name}}
+            </a>
+	    </li>
+    {{end}}
+    </div>
 </div>
 {{ template "_internal/pagination.html" . }}
 {{ partial "bottom.html" . }}
