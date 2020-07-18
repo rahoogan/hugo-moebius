@@ -51,3 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 })
+
+// Scroll indicator for article content pages
+let is_article = document.querySelector(".article-content")
+if (is_article) {
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.querySelector("hr.banner-divider").style.width = scrolled + "%";
+    }
+}
