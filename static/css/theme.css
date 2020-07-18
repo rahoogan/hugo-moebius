@@ -341,11 +341,32 @@ h3.entry-title a {
 
 /* Syntax Highlighting */
 .hljs {
+    color: #ffeb3b;
     border-radius: 10px;
     box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
     background: #181914;
 }
 
+/* Choose high contrast color for code comments */
+.hljs-comment {
+    color: #00bcd4;
+}
+
+.hljs-meta {
+    color: #FF9800;
+}
+
+.hljs-keyword {
+    color: #ff5722;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-doctag,
+.hljs-regexp {
+    color: #8bc34a;
+}
+.
 /******************/
 /* Sidebar Styles */
 /******************/
