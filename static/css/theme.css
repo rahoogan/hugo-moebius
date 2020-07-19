@@ -55,6 +55,7 @@ html {
     margin-right: auto;
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-bottom: 0px;
 }
 
 @media screen and (min-width: 800px) {
@@ -168,6 +169,7 @@ div.navbar {
     list-style: none;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 0.5rem;
 }
 
 .navbar-dropdown.active {
@@ -180,6 +182,11 @@ div.navbar {
     margin: 0.2rem;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+/* Don't display icons with bold in dropdown */
+.navbar-dropdown li.social-link {
+    font-weight: normal;
 }
 
 /* Hide hamburger menu and dropdown for larger screens */
@@ -197,7 +204,8 @@ div.navbar {
 @media screen and (min-width: 800px) {
     #makeover {
         display: inherit;
-	padding: 1rem;
+        padding: 1rem;
+        opacity: 40%;
     }
 }
 
@@ -321,12 +329,12 @@ h3.entry-title a {
     height: 50px;
     border-radius: 50%;
     width: 50px;
-    opacity: 60%;
     position: fixed;
     z-index: 2;
     bottom: 50px;
     right: 50px;
     color: inherit;
+    background: white;
 }
 
 .scroll-up i {
