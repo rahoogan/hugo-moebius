@@ -30,14 +30,15 @@ hamburger.addEventListener("click", function(e) {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-    if (window.location.pathname.startsWith('/tags/')) {
+    let current = window.location.pathname;
+    if (current.startsWith('/tags/')) {
         // Clear all existing tags
         document.querySelectorAll('.tag').forEach(function(i) {
             if (i.classList.contains('active')) {
                 i.classList.remove('active');
             }
         })
-        window.location.pathname
+        current
             .split('/')
             .filter(word => word.length > 0 && word !== "tags")
             .forEach(function(t) {
@@ -49,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.tag.active').forEach(function(i) {
             i.classList.remove('active');
         })
+    }
+    if (current === '/posts/') {
+        document.querySelector('nav.navbar a[href="/posts/"]').classList.toggle("active")
+    }
+    else if (current === '/about/' ) {
+        document.querySelector('nav.navbar a[href="/about/"]').classList.toggle("active")
     }
 })
 

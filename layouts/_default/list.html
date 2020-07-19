@@ -1,5 +1,5 @@
 {{ partial "top.html" . }}
-{{ $paginator := .Paginate .Data.Pages.ByPublishDate }}
+{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
 <div class="content">
     <div class="articles">
     {{ range $paginator.Pages }}

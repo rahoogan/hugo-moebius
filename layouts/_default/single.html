@@ -3,8 +3,10 @@
 <h1>{{ .Title }}</h1>
 
 <hr>
+{{ if eq .Type "posts" }}
 <h2>Table of Contents</h2>
 {{ .TableOfContents }}
+{{ end }}
 <article>
     {{ .Content }}
 </article>
