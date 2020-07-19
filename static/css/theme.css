@@ -224,6 +224,7 @@ div.navbar {
 
 .entry-title {
     margin-bottom: 1rem;
+    margin-top: 0px;
 }
 
 .entry-date {
@@ -472,6 +473,11 @@ code, kbd, pre, samp {
     padding-top: 140px;
 }
 
+/* Divider after main heading for article content */
+.article-content h1 {
+    box-shadow: 0 20px 13px -13px rgba(100,110,140,.1), 0 5px 4px -4px rgba(100,110,140,.15);
+    padding-bottom: 1rem;
+}
 
 /* Clean up Hugo Generated Table of Contents */
 /* Don't display empty h1 level if it doesn't exist (i.e an empty bullet point) */
