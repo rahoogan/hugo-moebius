@@ -66,6 +66,11 @@ if (is_article) {
         let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         let scrolled = (winScroll / height) * 100;
-        document.querySelector("hr.banner-divider").style.width = scrolled + "%";
+        if (scrolled > 0) {
+            document.querySelector("hr.banner-divider").style.width = scrolled + "%";
+        }
+        else {
+            document.querySelector("hr.banner-divider").style.width = "100%";
+        }
     }
 }
