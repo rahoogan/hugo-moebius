@@ -325,7 +325,7 @@ h3.entry-title a {
 /* floating icon button to scroll up to the top */
 .scroll-up {
     border-width: thick;
-    border: 5px solid #516ffe;
+    border: 5px solid rgba(81, 111, 254, 0.6);
     height: 50px;
     border-radius: 50%;
     width: 50px;
@@ -335,16 +335,17 @@ h3.entry-title a {
     right: 50px;
     color: inherit;
     background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: inherit;
 }
 
 .scroll-up i {
     border: 10px;
     border-width: thick;
     height: auto;
-    text-align: center;
-    vertical-align: middle;
-    padding-left: 10px;
-    padding-top: 3px;
+    opacity: 60%;
 }
 
 /* Syntax Highlighting */
