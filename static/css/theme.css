@@ -347,6 +347,12 @@ h3.entry-title a {
     padding-top: 3px;
 }
 
+
+/* Ensure word wrap for code literals */
+code, kbd, pre, samp {
+    word-break: break-word;
+}
+
 /* Syntax Highlighting */
 .hljs {
     color: #ffeb3b;
