@@ -347,13 +347,14 @@ h3.entry-title a {
     padding-top: 3px;
 }
 
-
+/* Syntax Highlighting */
 /* Ensure word wrap for code literals */
 code, kbd, pre, samp {
     word-break: break-word;
+    font-size: 1rem;
+    white-space: pre-wrap;
 }
 
-/* Syntax Highlighting */
 .hljs {
     color: #ffeb3b;
     border-radius: 10px;
@@ -379,6 +380,11 @@ code, kbd, pre, samp {
 .hljs-doctag,
 .hljs-regexp {
     color: #8bc34a;
+}
+
+/* Disable word-wrap for whitespace sensitive languages */
+.language-python {
+    white-space: pre;
 }
 .
 /******************/
