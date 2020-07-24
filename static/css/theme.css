@@ -280,6 +280,8 @@ hr.banner-divider {
         font-size: 1.2rem;
         /* For Sticky Sidebar */
         display: flex;
+	/* Bigger width for larger screens */
+	max-width: 1024px
     }
 
     .content h1 {
@@ -321,6 +323,7 @@ h3.entry-title a {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.1rem;
+    max-width: 850px;
     /* font-size: 1.2rem; */
 }
 
