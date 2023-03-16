@@ -277,7 +277,7 @@ hr.banner-divider {
 
 @media screen and (min-width: 800px) {
     .content {
-        font-size: 1.2rem;
+        font-size: 1rem;
         /* For Sticky Sidebar */
         display: flex;
 	/* Bigger width for larger screens */
@@ -451,7 +451,6 @@ code, kbd, pre, samp {
         color: #516ffe;
         border-color: black;
         border-width: thick;
-        border: 1px solid;
         border-radius: 5px;
         font-weight: bold;
         margin: 0.4rem;
