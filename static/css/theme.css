@@ -11,7 +11,7 @@ html {
 }
 /***********************/
 /* Mobile First Design */
-/* Declare styles for 
+/* Declare styles for
 mobile devices first */
 /***********************/
 
@@ -260,7 +260,7 @@ hr.banner-divider {
     margin-top: 130px;
 }
 
-.content p {
+.article p {
     font-size: 1rem;
     word-break: break-word;
 }
@@ -326,7 +326,8 @@ h3.entry-title a {
     padding-right: 2rem;
     padding-top: 0.1rem;
     max-width: 850px;
-    /* font-size: 1.2rem; */
+    font-size: 1.1rem;
+    line-height: 2;
 }
 
 /* floating icon button to scroll up to the top */
@@ -454,6 +455,7 @@ code, kbd, pre, samp {
         border-radius: 5px;
         font-weight: bold;
         margin: 0.4rem;
+        box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
     }
 
     li.tag a {
