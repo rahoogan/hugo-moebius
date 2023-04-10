@@ -1,3 +1,18 @@
+/* Light theme */
+:root {
+    --font-color: #335C81;
+    --link-color:#274060;
+    --border-color:#274060;
+    --bg-color: #FCF7F8;
+}
+/* Dark theme */
+[data-theme="dark"] {
+    --font-color: #335C81;
+    --link-color:#26547C;
+    --border-color:#26547C;
+    --bg-color: #01161E;
+}
+
 html {
     /* This ensures padding and margins are included in element sizes */
     box-sizing: border-box;
@@ -38,11 +53,11 @@ mobile devices first */
 /* Global Styles and Fonts */
 html {
     font-family: 'Montserrat', sans-serif;
-    color: #516ffe;
+    color: var(--font-color);
 }
 
 .bg-color {
-    background-color: #516ffe;
+    background-color: var(--border-color);
 }
 
 /*****************/
@@ -96,10 +111,10 @@ nav a {
 }
 
 nav a.active {
-    background-color: #516ffe;
+    background-color: var(--bg-color);
     padding: 0.4rem;
-    color: white;
-    border-color: black;
+    color: var(--font-color);
+    border-color: var(--border-color);
     border-width: thick;
     border: 1px solid;
     border-radius: 5px;
@@ -212,7 +227,7 @@ div.navbar {
 .sticky-nav {
     top: 0;
     position: fixed;
-    background: white;
+    background: var(--bg-color);
     width: 100%;
 }
 
@@ -236,7 +251,6 @@ hr.banner-divider {
     margin-left: 1%;
     margin-right: 1%;
     height: .2rem;
-    color: #a79c9c;
     border-radius: 25px;
     border-color: transparent;
     opacity: 60%;
@@ -333,7 +347,7 @@ h3.entry-title a {
 /* floating icon button to scroll up to the top */
 .scroll-up {
     border-width: thick;
-    border: 5px solid rgba(81, 111, 254, 0.6);
+    border: 5px solid var(--border-color);
     height: 50px;
     border-radius: 50%;
     width: 50px;
@@ -342,7 +356,7 @@ h3.entry-title a {
     bottom: 50px;
     right: 50px;
     color: inherit;
-    background: white;
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -395,7 +409,7 @@ code, kbd, pre, samp {
 .language-python {
     white-space: pre;
 }
-.
+
 /******************/
 /* Sidebar Styles */
 /******************/
@@ -448,7 +462,7 @@ code, kbd, pre, samp {
     .tag {
         padding-left: 0.4rem;
         padding-right: 0.4rem;
-        color: #516ffe;
+        color: var(--font-color);
         border-color: black;
         border-width: thick;
         border-radius: 5px;
@@ -464,9 +478,9 @@ code, kbd, pre, samp {
 
     /* Style for a selected tag */
     .tag.active {
-        color: white;
-        border-color: white;
-        background-color: #516ffe;
+        color: var(--bg-color);
+        border-color: var(--font-color);
+        background-color: var(--font-color);
     }
 }
 
@@ -526,3 +540,67 @@ code, kbd, pre, samp {
     color: inherit;
     text-decoration: inherit;
 }
+
+/** Toggle button **/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--border-color);
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--border-color);
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
