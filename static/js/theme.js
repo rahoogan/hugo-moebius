@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.documentElement.setAttribute("data-theme", "dark");
         }
     }
+    detectColorScheme();
 
     //identify the toggle switch HTML element
     const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
