@@ -7,7 +7,7 @@
 }
 /* Dark theme */
 [data-theme="dark"] {
-    --font-color: #335C81;
+    --font-color: #D0CFCF;
     --link-color:#26547C;
     --border-color:#26547C;
     --bg-color: #01161E;
@@ -54,6 +54,7 @@ mobile devices first */
 html {
     font-family: 'Montserrat', sans-serif;
     color: var(--font-color);
+    background-color: var(--bg-color);
 }
 
 .bg-color {
@@ -347,7 +348,6 @@ h3.entry-title a {
 /* floating icon button to scroll up to the top */
 .scroll-up {
     border-width: thick;
-    border: 5px solid var(--border-color);
     height: 50px;
     border-radius: 50%;
     width: 50px;
