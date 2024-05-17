@@ -488,6 +488,11 @@ pre {
     }
 }
 
+/* Don't wrap code for readability */
+pre code.hljs {
+    text-wrap: nowrap;
+}
+
 /******************/
 /* Sidebar Styles */
 /******************/
