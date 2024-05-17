@@ -1,15 +1,16 @@
 /* Light theme */
 :root {
     --font-color: #335C81;
-    --link-color:#274060;
-    --border-color:#274060;
+    --link-color: #274060;
+    --border-color: #274060;
     --bg-color: #FCF7F8;
 }
+
 /* Dark theme */
 [data-theme="dark"] {
     --font-color: #D0CFCF;
-    --link-color:#26547C;
-    --border-color:#26547C;
+    --link-color: #26547C;
+    --border-color: #26547C;
     --bg-color: #01161E;
 }
 
@@ -24,6 +25,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
 /***********************/
 /* Mobile First Design */
 /* Declare styles for
@@ -78,7 +80,7 @@ html {
     .navbar {
         padding-left: 1rem;
         padding-right: 1rem;
-	    max-width: 1024px;
+        max-width: 1024px;
     }
 }
 
@@ -100,7 +102,7 @@ a.nav-link {
     a.nav-link {
         display: flex;
         padding: 1rem;
-	font-size: 1.3rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -135,8 +137,8 @@ nav a.active {
 @media screen and (min-width: 800px) {
     .nav-icons a.social-icon {
         display: inherit;
-	padding: 1rem;
-	font-size: 2rem;
+        padding: 1rem;
+        font-size: 2rem;
     }
 }
 
@@ -154,6 +156,7 @@ nav a.active {
 }
 
 @media screen and (min-width: 800px) {
+
     /* Larger title font size for desktops */
     .navbar h1 {
         font-size: 2rem;
@@ -295,13 +298,14 @@ hr.banner-divider {
         font-size: 1rem;
         /* For Sticky Sidebar */
         display: flex;
-	/* Bigger width for larger screens */
-	max-width: 1024px
+        /* Bigger width for larger screens */
+        max-width: 1024px
     }
 
     .content h1 {
-	font-size: 2rem;
+        font-size: 2rem;
     }
+
     .content h2,
     .content h3,
     .content h4 {
@@ -319,6 +323,7 @@ div.content a {
 /* Ensure images fit to screen */
 div.content img {
     max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Prevent titles in cards showing default hyperlinks */
@@ -328,7 +333,7 @@ h3.entry-title a {
 }
 
 .card {
-    box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+    box-shadow: 0 3px 13px rgba(100, 110, 140, .1), 0 2px 4px rgba(100, 110, 140, .15);
     padding: 2rem;
     margin: 3%;
     border-radius: 5%;
@@ -372,42 +377,115 @@ h3.entry-title a {
 
 /* Syntax Highlighting */
 /* Ensure word wrap for code literals */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
     word-break: break-word;
     font-size: 1rem;
     white-space: pre-wrap;
 }
 
-.hljs {
-    color: #ffeb3b;
+pre {
     border-radius: 10px;
-    box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
-    background: #181914;
-}
-
-/* Choose high contrast color for code comments */
-.hljs-comment {
-    color: #00bcd4;
-}
-
-.hljs-meta {
-    color: #FF9800;
-}
-
-.hljs-keyword {
-    color: #ff5722;
-}
-
-.hljs-number,
-.hljs-string,
-.hljs-doctag,
-.hljs-regexp {
-    color: #8bc34a;
 }
 
 /* Disable word-wrap for whitespace sensitive languages */
 .language-python {
     white-space: pre;
+}
+
+/* Theme a11y-dark.css - from: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css */
+.hljs {
+    background: #2b2b2b;
+    color: #f8f8f2;
+}
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+    color: #d4d0ab;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+    color: #ffa07a;
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+    color: #f5ab35;
+}
+
+/* Yellow */
+.hljs-attribute {
+    color: #ffd700;
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+    color: #abe338;
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+    color: #00e0e0;
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+    color: #dcc6e0;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-built_in,
+    .hljs-bullet,
+    .hljs-comment,
+    .hljs-link,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-params,
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-type,
+    .hljs-quote {
+        color: highlight;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+        font-weight: bold;
+    }
 }
 
 /******************/
@@ -431,9 +509,13 @@ code, kbd, pre, samp {
         margin-right: 1rem;
     }
 
+    .articles {
+        width: 100%;
+    }
+
     .sidebar-sticky {
         display: block;
-        width: 200%;
+        width: 50%;
     }
 
     .sidebar-sticky ul {
@@ -450,7 +532,7 @@ code, kbd, pre, samp {
     /* Search box */
     .search {
         padding: 1rem;
-        box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+        box-shadow: 0 3px 13px rgba(100, 110, 140, .1), 0 2px 4px rgba(100, 110, 140, .15);
         border: none;
     }
 
@@ -468,12 +550,13 @@ code, kbd, pre, samp {
         border-radius: 5px;
         font-weight: bold;
         margin: 0.4rem;
-        box-shadow: 0 3px 13px rgba(100,110,140,.1), 0 2px 4px rgba(100,110,140,.15);
+        box-shadow: 0 3px 13px rgba(100, 110, 140, .1), 0 2px 4px rgba(100, 110, 140, .15);
     }
 
     li.tag a {
         color: inherit;
-        text-decoration: inherit;;
+        text-decoration: inherit;
+        ;
     }
 
     /* Style for a selected tag */
@@ -495,7 +578,7 @@ code, kbd, pre, samp {
 
 /* Divider after main heading for article content */
 .article-content h1 {
-    box-shadow: 0 20px 13px -13px rgba(100,110,140,.1), 0 5px 4px -4px rgba(100,110,140,.15);
+    box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
     padding-bottom: 1rem;
 }
 
@@ -504,7 +587,8 @@ code, kbd, pre, samp {
 #TableOfContents>ul {
     padding: 0;
 }
-#TableOfContents>ul>li{
+
+#TableOfContents>ul>li {
     list-style: none;
 }
 
@@ -548,17 +632,17 @@ code, kbd, pre, samp {
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
+}
 
-  /* Hide default HTML checkbox */
-  .switch input {
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
 
-  /* The slider */
-  .slider {
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -568,9 +652,9 @@ code, kbd, pre, samp {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
 
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -580,27 +664,39 @@ code, kbd, pre, samp {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
 
-  input:checked + .slider {
+input:checked+.slider {
     background-color: var(--border-color);
-  }
+}
 
-  input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px var(--border-color);
-  }
+}
 
-  input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
+}
 
-  /* Rounded sliders */
-  .slider.round {
+/* Rounded sliders */
+.slider.round {
     border-radius: 34px;
-  }
+}
 
-  .slider.round:before {
+.slider.round:before {
     border-radius: 50%;
-  }
+}
+
+table td,
+th {
+    padding: 5px;
+    border: 1px solid;
+    border-color: darkgray;
+}
+
+video {
+    width: 100%;
+    max-height: 100%;
+}
