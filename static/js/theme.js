@@ -1,11 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    let lastKnownScrollPosition = 0;
+
     const nav_btn = document.querySelectorAll("nav .nav-link");
-    nav_btn.forEach(function(item) {
+    nav_btn.forEach(function (item) {
         // Toggle selected item
-        item.addEventListener("click", function(e) {
+        item.addEventListener("click", function (e) {
             // Toggle all other selected items
             let other_btns = document.querySelectorAll("nav .nav-link.active");
-            other_btns.forEach(function(i) {
+            other_btns.forEach(function (i) {
                 i.classList.remove("active")
             })
             // Set currently selected item
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     const scroll_btn = document.getElementById("scroll-btn");
-    scroll_btn.addEventListener("click", function(e) {
+    scroll_btn.addEventListener("click", function (e) {
         // Prevent navigating to empty href
         e.preventDefault();
         // Scroll to the top
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* Dropdown Menu */
     const hamburger = document.getElementById("hamburger");
     const dropdown = document.querySelector("ul.navbar-dropdown");
-    hamburger.addEventListener("click", function(e) {
+    hamburger.addEventListener("click", function (e) {
         e.preventDefault();
         hamburger.classList.toggle("active")
         dropdown.classList.toggle("active")
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let current = window.location.pathname;
     if (current.startsWith('/tags/')) {
         // Clear all existing tags
-        document.querySelectorAll('.tag').forEach(function(i) {
+        document.querySelectorAll('.tag').forEach(function (i) {
             if (i.classList.contains('active')) {
                 i.classList.remove('active');
             }
@@ -41,44 +43,44 @@ document.addEventListener("DOMContentLoaded", function() {
         current
             .split('/')
             .filter(word => word.length > 0 && word !== "tags")
-            .forEach(function(t) {
+            .forEach(function (t) {
                 // Set current active tag
-                document.querySelector('.tag-'+t).classList.toggle('active');
+                document.querySelector('.tag-' + t).classList.toggle('active');
             });
     }
     else {
-        document.querySelectorAll('.tag.active').forEach(function(i) {
+        document.querySelectorAll('.tag.active').forEach(function (i) {
             i.classList.remove('active');
         })
     }
     if (current === '/posts/') {
         document.querySelector('nav.navbar a[href="/posts/"]').classList.toggle("active")
     }
-    else if (current === '/about/' ) {
+    else if (current === '/about/') {
         document.querySelector('nav.navbar a[href="/about/"]').classList.toggle("active")
     }
 
     // Dark theme
     // From - https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting
     // determines if the user has a set theme
-    function detectColorScheme(){
-        var theme="light";    //default to light
+    function detectColorScheme() {
+        var theme = "light";    //default to light
 
         //local storage is used to override OS theme settings
-        if(localStorage.getItem("theme")){
-            if(localStorage.getItem("theme") == "dark"){
+        if (localStorage.getItem("theme")) {
+            if (localStorage.getItem("theme") == "dark") {
                 var theme = "dark";
             }
-        } else if(!window.matchMedia) {
+        } else if (!window.matchMedia) {
             //matchMedia method not supported
             return false;
-        } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             //OS theme setting detected as dark
             var theme = "dark";
         }
 
         //dark theme preferred, set document with a `data-theme` attribute
-        if (theme=="dark") {
+        if (theme == "dark") {
             document.documentElement.setAttribute("data-theme", "dark");
         }
     }
@@ -104,23 +106,39 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleSwitch.addEventListener('change', switchTheme, false);
 
     //pre-check the dark-theme checkbox if dark-theme is set
-    if (document.documentElement.getAttribute("data-theme") == "dark"){
+    if (document.documentElement.getAttribute("data-theme") == "dark") {
         toggleSwitch.checked = true;
     }
 
     // Scroll indicator for article content pages
     let is_article = document.querySelector(".article-content")
     if (is_article) {
-        window.onscroll = function() {
+        window.onscroll = function () {
+            let st = document.documentElement.scrollTop;
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
+            let navObj = document.querySelector("nav");
             if (scrolled > 0) {
                 document.querySelector("hr.banner-divider").style.width = scrolled + "%";
+                if (!navObj.classList.contains("hidden")) {
+                    navObj.classList.toggle("hidden");
+                }
             }
             else {
                 document.querySelector("hr.banner-divider").style.width = "100%";
+                if (navObj.classList.contains("hidden")) {
+                    navObj.classList.toggle("hidden");
+                }
             }
+
+            // Detect scroll down
+            if (st < lastKnownScrollPosition) {
+                if (navObj.classList.contains("hidden")) {
+                    navObj.classList.toggle("hidden");
+                }
+            }
+            lastKnownScrollPosition = st <= 0 ? 0 : st;
         }
     }
 })

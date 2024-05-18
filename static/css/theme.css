@@ -4,6 +4,7 @@
     --link-color: #274060;
     --border-color: #274060;
     --bg-color: #FCF7F8;
+    --content-width: 780px;
 }
 
 /* Dark theme */
@@ -266,7 +267,7 @@ hr.banner-divider {
 .content {
     margin-bottom: 2rem;
     /* Ensure content is fixed width */
-    max-width: 850px;
+    max-width: var(--content-width);
     /* Align content to conter */
     margin-left: auto;
     margin-right: auto;
@@ -345,8 +346,8 @@ h3.entry-title a {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.1rem;
-    max-width: 850px;
-    font-size: 1.1rem;
+    max-width: var(--content-width);
+    font-size: 1rem;
     line-height: 2;
 }
 
@@ -704,4 +705,8 @@ th {
 video {
     width: 100%;
     max-height: 100%;
+}
+
+.hidden {
+    display: none;
 }
