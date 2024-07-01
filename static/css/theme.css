@@ -9,7 +9,7 @@
 
 /* Dark theme */
 [data-theme="dark"] {
-    --font-color: #D0CFCF;
+    --font-color: #b4bac5;
     --link-color: #26547C;
     --border-color: #26547C;
     --bg-color: #01161E;
@@ -294,26 +294,6 @@ hr.banner-divider {
     font-size: 1.3rem;
 }
 
-@media screen and (min-width: 800px) {
-    .content {
-        font-size: 1rem;
-        /* For Sticky Sidebar */
-        display: flex;
-        /* Bigger width for larger screens */
-        max-width: 1024px
-    }
-
-    .content h1 {
-        font-size: 2rem;
-    }
-
-    .content h2,
-    .content h3,
-    .content h4 {
-        font-size: 1.3rem;
-    }
-}
-
 /* Ensure link text in content wraps around */
 div.content a {
     white-space: pre-wrap;
@@ -334,10 +314,9 @@ h3.entry-title a {
 }
 
 .card {
-    box-shadow: 0 3px 13px rgba(100, 110, 140, .1), 0 2px 4px rgba(100, 110, 140, .15);
+    box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
     padding: 2rem;
     margin: 3%;
-    border-radius: 5%;
 }
 
 /* Add padding for full-length article content (on mobile) */
@@ -609,7 +588,6 @@ pre code.hljs {
 
 .pagination li {
     border-width: thick;
-    border: 5px solid #516ffe;
     height: 50px;
     border-radius: 50%;
     width: 50px;
@@ -709,4 +687,108 @@ video {
 
 .hidden {
     display: none;
+}
+
+.post-meta {
+    padding-bottom: 1rem;
+    box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
+}
+
+.post-meta table tr td {
+    border: none;
+    padding: 5px;
+}
+
+.toc {
+    padding: 5px;
+    box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
+}
+
+blockquote {
+    padding-left: 1rem;
+    border-left: .2rem solid;
+    border-color: orange;
+}
+
+@media screen and (min-width: 800px) {
+
+    .content {
+        font-size: 1rem;
+    }
+
+    /* Bigger width for larger screens */
+    .article-content {
+        max-width: 780px;
+    }
+
+    .list-content {
+        max-width: 1024px;
+        /* For Sticky Sidebar */
+        display: flex;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content h2,
+    .content h3,
+    .content h4 {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .content {
+        margin-top: 95px;
+    }
+
+    .article-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .article-content h2 {
+        font-size: 1rem;
+    }
+
+    .article-content {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .list-content {
+        font-size: 0.9rem;
+        padding: 0px;
+    }
+
+    .list-content h3 {
+        font-size: 1rem;
+    }
+
+    code {
+        font-size: 0.9rem;
+    }
+
+    .brand-title {
+        font-size: 1.2rem;
+        margin-top: .5rem;
+    }
+
+    .brand-subtitle {
+        font-size: .8rem;
+        margin-bottom: .5rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .pagination li a {
+        font-size: 1rem;
+    }
 }

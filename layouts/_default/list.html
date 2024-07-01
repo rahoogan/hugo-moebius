@@ -1,26 +1,26 @@
 {{ partial "top.html" . }}
 {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-<div class="content">
+<div class="list-content content">
     <div class="articles">
-    {{ range $paginator.Pages }}
-    <article class="card">
-        <h3 class="entry-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <p class="entry-date">{{ dateFormat "2006-01-02" .Date }}</p>
-        <p>{{ .Summary }}</p>
-    </article>
-    {{ end }}
+        {{ range $paginator.Pages }}
+        <article class="card">
+            <h3 class="entry-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="entry-date">{{ dateFormat "2006-01-02" .Date }}</p>
+            <p>{{ .Summary }}</p>
+        </article>
+        {{ end }}
     </div>
     <div class="sidebar-sticky">
-    <aside class="sidebar">
-    </aside>
-    <ul>
-    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
-        <li class="tag tag-{{ $name }}">
-            <a href="{{ $.Site.BaseURL }}/tags/{{ $name }}">
-                {{ $name}}
-            </a>
-	    </li>
-    {{end}}
+        <aside class="sidebar">
+        </aside>
+        <ul>
+            {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+            <li class="tag tag-{{ $name }}">
+                <a href="{{ $.Site.BaseURL }}/tags/{{ $name }}">
+                    {{ $name}}
+                </a>
+            </li>
+            {{end}}
     </div>
 </div>
 {{ template "_internal/pagination.html" . }}

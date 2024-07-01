@@ -1,14 +1,30 @@
 {{ partial "top.html" . }}
 <div class="content article-content">
-<h1>{{ .Title }}</h1>
-
-{{ if eq .Type "posts" }}
-<h2>Table of Contents</h2>
-{{ .TableOfContents }}
-{{ end }}
-<article>
-    {{ .Content }}
-</article>
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Type "posts" }}
+    <div class="post-meta">
+        <table>
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td><b>Reading time<b>:</td>
+                    <td>{{ printf "%d minutes" .ReadingTime }}</td>
+                </tr>
+                <tr>
+                    <td><b>Published date:</b></td>
+                    <td>{{ .PublishDate | time.Format ":date_medium" }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    <article>
+        {{ .Content }}
+    </article>
 </div>
 
 {{ partial "bottom.html" . }}
