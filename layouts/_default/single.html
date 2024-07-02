@@ -3,16 +3,14 @@
     <h1>{{ .Title }}</h1>
     {{ if eq .Type "posts" }}
     <div class="post-meta">
-        <table>
+        <table class="pm">
             <thead></thead>
             <tbody>
                 <tr>
                     <td><b>Reading time<b>:</td>
                     <td>{{ printf "%d minutes" .ReadingTime }}</td>
-                </tr>
-                <tr>
                     <td><b>Published date:</b></td>
-                    <td>{{ .PublishDate | time.Format ":date_medium" }}</td>
+                    <td>{{ dateFormat "2 Jan 2006" .Date }}</td>
                 </tr>
             </tbody>
         </table>

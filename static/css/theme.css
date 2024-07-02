@@ -689,10 +689,6 @@ video {
     display: none;
 }
 
-.post-meta {
-    padding-bottom: 1rem;
-    box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
-}
 
 .post-meta table tr td {
     border: none;
@@ -701,6 +697,7 @@ video {
 
 .toc {
     padding: 5px;
+    margin-bottom: 2rem;
     box-shadow: 0 20px 13px -13px rgba(100, 110, 140, .1), 0 5px 4px -4px rgba(100, 110, 140, .15);
 }
 
@@ -735,6 +732,10 @@ blockquote {
     .content h3,
     .content h4 {
         font-size: 1.3rem;
+    }
+
+    .pm {
+        display: block;
     }
 }
 
@@ -790,5 +791,10 @@ blockquote {
 
     .pagination li a {
         font-size: 1rem;
+    }
+
+    .pm {
+        display: block;
+        font-size: 0.7rem;
     }
 }
