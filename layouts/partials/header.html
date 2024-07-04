@@ -5,7 +5,7 @@
 <meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
 <meta name="description" content="{{ .Params.summary }}">
 <title>{{ .Title }}</title>
-{{ .Hugo.Generator }}
+{{ hugo.Generator }}
 <!-- syntax highlighting-->
 {{ partial "highlightjs.html" }}
 <!-- RSS -->
