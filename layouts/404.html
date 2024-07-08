@@ -1,0 +1,14 @@
+{{ partial "top.html" . }}
+<div class=" content">
+    <div class="notfound">
+        <h2>404 Not Found</h2>
+        <img src="https://imgs.xkcd.com/comics/not_available.png" alt="xkcd 404 not found">
+        <p class="image-caption">(Courtesy of <a href="https://xkcd.com/1969/">XKCD 1969</a>)</p>
+        <p>
+            <a href="{{ .Site.Home.RelPermalink }}">
+                Return to the home page
+            </a>
+        </p>
+    </div>
+</div>
+{{ partial "bottom.html" . }}
